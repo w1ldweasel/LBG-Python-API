@@ -121,3 +121,27 @@ For integration tests we can test the RESTful endpoints.
 
 If we test the **Create** endpoint by sending a request with a method of `POST` and a path of `/create` we should expect the response to be...
 Status code: 201, Status text: Created
+
+#### User Acceptance Testing
+
+This is similar to a 'black-box' system test as we are testing the front-end with no knowledge of the back-end.
+
+An example user acceptance test is included with this project.
+
+```gherkin
+Scenario Outline: User adding a new item successfully
+        Given That a user is on the url "http://localhost:8080/index.html"
+        When The user enters the item name "<name>", description "<description>", and price "<price>" into the CREATE section
+        And The user clicks the POST button
+        Then The READ ALL section will populate with JSON containing _id "<_id>", name "<name>", description "<description>", and price "<price>"
+        Examples:
+            | name |  description | price | _id |
+            | Test Name | Test Description | 9.99 | 1 |
+```
+
+A user story has been used to create a behaviour driven test for the system.
+
+**Given** that a user can access the front-end of the application
+**When** they input correct details for an item
+**And** they submit those details
+**Then** the item is created and added to the database
