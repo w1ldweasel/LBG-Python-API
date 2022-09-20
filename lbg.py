@@ -9,7 +9,7 @@ from flask_api import status
 from models import db, ItemModel
 from sqlalchemy import exc
 
-# JavaScript/ES6 text/plain MIME Content type fix (avoids registry hack!)
+# JavaScript/ES6 text/plain MIME Content type fix (avoids registry hack!) 
 import mimetypes
 mimetypes.add_type('text/javascript', '.js')
 
