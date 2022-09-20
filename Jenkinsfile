@@ -13,7 +13,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                ssh -i '~/.ssh/id_rsa' jenkins@34.89.108.123 << EOF
+                ssh -i '~/.ssh/id_rsa' jenkins@34.142.32.81 << EOF
                 docker stop auto-container
                 docker rm auto-container
                 docker run -d -p 8080:8080 --name auto-container stratcastor/automated-image:latest
