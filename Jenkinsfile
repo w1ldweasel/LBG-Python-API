@@ -1,10 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('test') {
+        stage('Test') {
             steps {
                 sh '''
-                python lbg.test.py
+                python3 lbg.test.py
                 '''
             }
         }
