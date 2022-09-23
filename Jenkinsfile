@@ -4,7 +4,7 @@ pipeline {
         stage('test') {
             steps {
                 sh '''
-                npm init
+                npm init -y
                 npm install
                 npm test
                 '''
