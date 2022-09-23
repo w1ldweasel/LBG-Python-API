@@ -4,8 +4,8 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                pip3 install -r requirements.txt
-                python3 lbg.test.py
+                pip install -r requirements.txt
+                python2 lbg.test.py
                 '''
             }
         }
