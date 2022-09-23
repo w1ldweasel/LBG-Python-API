@@ -13,8 +13,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                kubectl apply -f ./kubernetes/application.yaml
-                kubectl apply -f ./kubernetes/nginx.yaml
+                kubectl apply -f ./kubernetes/application.yml
+                kubectl apply -f ./kubernetes/nginx.yml
                 '''
             }
         }
