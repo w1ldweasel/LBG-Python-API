@@ -15,6 +15,8 @@ pipeline {
                 sh '''
                 kubectl apply -f ./kubernetes/application.yml
                 kubectl apply -f ./kubernetes/nginx.yml
+                kubectl rollout restart deployment pythonapp
+                kubectl rollout restart deployment nginx-deployment
                 '''
             }
         }
