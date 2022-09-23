@@ -1,14 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
-            steps {
-                sh '''
-                pip install -r requirements.txt
-                python2 lbg.test.py
-                '''
-            }
-        }
         stage('Build') {
             steps {
                 sh '''
