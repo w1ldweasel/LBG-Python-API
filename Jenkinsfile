@@ -4,9 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                docker build -t gcr.io/lbg-090522/automated-image:latest -t gcr.io/lbg-090522/automated-image:$BUILD_NUMBER .
-                docker push gcr.io/lbg-090522/automated-image:latest
-                docker push gcr.io/lbg-090522/automated-image:$BUILD_NUMBER
+                docker build -t gcr.io/lbg-python-cohort-8/pythonapp-image:latest -t gcr.io/lbg-python-cohort-8/pythonapp-image:$BUILD_NUMBER .
+                docker push gcr.io/lbg-python-cohort-8/pythonapp-image:latest
+                docker push gcr.io/lbg-python-cohort-8/pythonapp-image:$BUILD_NUMBER
                 '''
             }
         }
