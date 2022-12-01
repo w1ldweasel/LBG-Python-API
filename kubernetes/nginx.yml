@@ -53,6 +53,6 @@ data:
     server {
         listen 80;
         location / {
-            proxy_pass http://pythonapp:8080/index.html;
+            proxy_pass http://mnpythonapp:8080/index.html;
         }
     }
