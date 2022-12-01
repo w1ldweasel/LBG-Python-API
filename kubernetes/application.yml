@@ -13,14 +13,14 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pythonapp
+  name: mnpythonapp
   labels:
-    app: pythonapp
+    app: mnpythonapp
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: pythonapp
+      app: mnpythonapp
   strategy:
     rollingUpdate:
       maxSurge: 10%
@@ -28,10 +28,10 @@ spec:
   template:
     metadata:
       labels:
-        app: pythonapp
+        app: mnpythonapp
     spec:
       containers:
-      - name: pythonapp
-        image: gcr.io/lbg-python-cohort-8/automated-image:latest
+      - name: mnpythonapp
+        image: gcr.io/lbg-python-cohort-8/mnpythonapp:latest
         ports:
         - containerPort: 8080
