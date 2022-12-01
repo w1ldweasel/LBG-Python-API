@@ -1,9 +1,9 @@
 #!/bin/bash
 
-docker build -t stratcastor/automated-image:latest .
-docker push stratcastor/automated-image:latest
+docker build -t w1ldweasel/api-app:latest .
+docker push w1ldweasel/api-app:latest
 
-docker stop auto-container
-docker rm auto-container
-docker run -d -p 8080:8080 --name auto-container stratcastor/automated-image:latest
+docker stop api-service
+docker rm api-service
+docker run -d -p 8081:8081 --name api-service w1ldweasel/api-app:latest
 
